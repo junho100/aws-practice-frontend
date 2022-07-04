@@ -6,7 +6,7 @@ export const Board = () => {
 
   const renderBoards = () => {
     axios
-      .get("http://localhost:8000/board")
+      .get("http://ec2-18-209-59-84.compute-1.amazonaws.com/board")
       .then((res) => {
         const boards = res.data;
         const list = document.querySelector("ul");
@@ -41,7 +41,7 @@ export const Board = () => {
           e.preventDefault();
           const c = document.querySelector("input").value;
           axios
-            .post("http://localhost:8000/board", {
+            .post("http://ec2-18-209-59-84.compute-1.amazonaws.com/board", {
               content: c,
             })
             .then(() => {
